@@ -1,7 +1,7 @@
 /*
   ==============================================================================
 
-    ck_AudioProcessorGraphMultiProcessorMultiProcessor.cpp
+    AudioProcessorGraphMultiProcessorMultiProcessor.cpp
     Created: 26 Nov 2012 11:35:49am
     Author:  Christian
 
