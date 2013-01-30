@@ -301,7 +301,7 @@ AudioProcessorGraphMultiThreaded::~AudioProcessorGraphMultiThreaded()
 {
 	stopAllThreads();
 
-	// Remove Circulal References
+	// Remove Circular References
 	// yes, the use of ReferenceCountedPointers may not the ideal solution, because nodes refer each other, which result in Circular References 
 	for (int i=0; i<nodes_original.size();i++)
 	{
@@ -309,7 +309,7 @@ AudioProcessorGraphMultiThreaded::~AudioProcessorGraphMultiThreaded()
 	}
 	nodes_original.clear();
 
-	// Remove Circulal References 
+	// Remove Circular References 
 	for (int i=0; i<nodes_workingCopy.size();i++)
 	{
 		nodes_workingCopy[i]->clearRef();
@@ -326,7 +326,7 @@ void AudioProcessorGraphMultiThreaded::clear()
 	ScopedLock sl(reconfigurationLock);
 	stopAllThreads();
 	
-	// Remove Circulal References 
+	// Remove Circular References 
 	for (int i=0; i<nodes_original.size();i++)
 	{
 		nodes_original[i]->clearRef();
@@ -412,7 +412,7 @@ bool AudioProcessorGraphMultiThreaded::removeNode (const uint32 nodeId)
 
     disconnectNode (nodeId);
 
-	buildRenderingSequence();	// important to remove circular refereces
+	buildRenderingSequence();	// important to remove circular references
 
     for (int i = nodes_original.size(); --i >= 0;)
     {
