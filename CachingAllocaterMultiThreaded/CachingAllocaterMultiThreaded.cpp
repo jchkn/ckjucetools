@@ -14,9 +14,9 @@
 
 // Proof of concept, only tested with MS VS2008
 
-// In Multi-threaded application, all threads using the same CriticalSection for locking the HEAP Memory, which can be a bottleneck and reason for spikes/clicks/pos/buffer-repeats while audio-playback.
+// In Multi-threaded applications, all threads using the same CriticalSection for locking the HEAP Memory, which can be a bottleneck and reason for spikes/clicks/pop/buffer-repeats while audio-playback.
 // This allocator recycles memory-Blocks deallocated by "delete" in its own cache per Thread
-// Its overloads the global new and delete operator (which is IMHO done by the linker, part off c++ standard), no header file is required
+// Its overloads the global new and delete operator (which is IMHO done by the linker, part of c++ standard), no header file is required
 // This is proof of concept, the caches won't be cleaned up at the end, so it WILL LEAK AS HELL (But if a application already will be closed, this should makes no difference)
 // Of cause, if the allocator is enabled you won't find your real memory leaks.
 
