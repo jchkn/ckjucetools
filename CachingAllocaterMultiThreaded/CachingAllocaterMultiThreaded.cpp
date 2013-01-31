@@ -18,7 +18,7 @@
 // This allocator recycles memory-Blocks deallocated by "delete" in its own cache per Thread
 // Its overloads the global new and delete operator (which is IMHO done by the linker, part off c++ standard), no header file is required
 // This is proof of concept, the caches won't be cleaned up at the end, so it WILL LEAK AS HELL (But if a application already will be closed, this should makes no difference)
-// Of cause with this setting you hard to find your true memory leaks.
+// Of cause, if the allocator is enabled you won't find your real memory leaks.
 
 // Every memory block will be classified into its own size category. 
 // Every size category/thread use its own cache
