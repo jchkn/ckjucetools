@@ -14,10 +14,10 @@
 #include "JuceHeader.h"
 
 
-class ScaleableContainer : public Component
+class ScalableContainer : public Component
 {
 public : 
-	ScaleableContainer(Component * componentToScale_, float initialScaleFactor, bool ownsComponent_) :
+	ScalableContainer(Component * componentToScale_, float initialScaleFactor, bool ownsComponent_) :
 	   componentToScale(componentToScale_),ownsComponent(ownsComponent_),scaleFactor(-1.f)
 	   {
 		   if (componentToScale!=nullptr)
@@ -28,7 +28,7 @@ public :
 		   setScaleFactor(initialScaleFactor);
 	   };
 
-	   ~ScaleableContainer()
+	   ~ScalableContainer()
 	   {
 		   if (ownsComponent) delete componentToScale;
 	   };
