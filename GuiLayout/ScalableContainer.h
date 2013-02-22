@@ -6,8 +6,8 @@
   ==============================================================================
 */
 
-#ifndef __SCALECONTAINER_H__
-#define __SCALECONTAINER_H__
+#ifndef __SCALABLECONTAINER_H__
+#define __SCALABLECONTAINER_H__
 
 #include "JuceHeader.h"
 
@@ -62,4 +62,4 @@ private:
 
 
 
-#endif  // __SCALECONTAINER_H__
+#endif  // __SCALABLECONTAINER_H__
