@@ -869,6 +869,12 @@ AudioProcessorGraphMultiThreaded::Node* AudioProcessorGraphMultiThreaded::getNod
 	return nodes_original [index];
 }
 
+double AudioProcessorGraphMultiThreaded::getTailLengthSeconds() const
+{
+	return 0.;
+}
+
+
 
 
 
@@ -1057,6 +1063,12 @@ void AudioProcessorGraphMultiThreaded::AudioGraphIOProcessor::setParentGraph (Au
         updateHostDisplay();
     }
 }
+
+double AudioProcessorGraphMultiThreaded::AudioGraphIOProcessor::getTailLengthSeconds() const
+{
+	return 0.;
+}
+
 
 
 

@@ -378,6 +378,7 @@ public:
         float getParameter (int);
         const String getParameterText (int);
         void setParameter (int, float);
+		double getTailLengthSeconds() const;;
 
         int getNumPrograms();
         int getCurrentProgram();
@@ -433,6 +434,8 @@ public:
 
     void getStateInformation (juce::MemoryBlock&);
     void setStateInformation (const void* data, int sizeInBytes);
+
+	double getTailLengthSeconds() const;;
 
 	CriticalSection& getConfigurationLock()
 	{
