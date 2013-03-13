@@ -4,6 +4,8 @@
 
 #include "JuceHeader.h"
 
+// Not enough tested in the moment!
+
 // Drop-in Replacement for PropertiesFile which is usable in MultiProcess environments
 // Of cause, this has no database-behavior, but prevents situations like
 // App A sets parameter A
@@ -68,7 +70,7 @@ public:
 	{
 		checkForModifications() ;
 		propertiesFile->setValue(keyName,value);
-	//	propertiesFile->saveIfNeeded();
+		propertiesFile->saveIfNeeded();
 		updateModificationTime();
 	}
 
@@ -77,7 +79,7 @@ public:
 	{
 		checkForModifications() ;
 		propertiesFile->setValue(keyName,xml);
-	//	propertiesFile->saveIfNeeded();
+		propertiesFile->saveIfNeeded();
 		updateModificationTime();
 	}
 
