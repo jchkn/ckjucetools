@@ -153,14 +153,21 @@ bool AudioProcessorGraphMultiThreaded::Node::process()
 			NodeChannel* ri=requiredInputs[i];
 			if (ri->inputConnection->destChannelIndex==o)
 			{
-				if (unwritten)
+				if (ri->inputConnection->sourceChannelIndex<ri->node->buffer->getNumChannels())
 				{
-					buffer->copyFrom(o,0,*ri->node->buffer,ri->inputConnection->sourceChannelIndex,0,buffer->getNumSamples());		
-					unwritten=false;
+					if (unwritten)
+					{
+						buffer->copyFrom(o,0,*ri->node->buffer,ri->inputConnection->sourceChannelIndex,0,buffer->getNumSamples());		
+						unwritten=false;
+					} else
+					{
+						buffer->addFrom(o,0,*ri->node->buffer,ri->inputConnection->sourceChannelIndex,0,buffer->getNumSamples());		
+					};
 				} else
 				{
-					buffer->addFrom(o,0,*ri->node->buffer,ri->inputConnection->sourceChannelIndex,0,buffer->getNumSamples());		
-				};
+					jassertfalse; return true;
+					// todo
+				}
 			};
 		}
 
