@@ -165,8 +165,7 @@ bool AudioProcessorGraphMultiThreaded::Node::process()
 					};
 				} else
 				{
-					jassertfalse; return true;
-					// todo
+					DBG("Impossible Connection: Source Channel "+String(ri->inputConnection->sourceChannelIndex)+" is higher than available channels "+String(buffer->getNumChannels()));
 				}
 			};
 		}
