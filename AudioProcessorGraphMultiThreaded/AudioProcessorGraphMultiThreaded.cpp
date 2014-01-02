@@ -52,9 +52,9 @@ AudioProcessorGraphMultiThreaded::Node::Node (const uint32 nodeId_, AudioProcess
     : nodeId (nodeId_),
       processor (processor_),
 	  isPrepared (false),
+        graph(graph_),
+	  processingDone(false)
 
-	  processingDone(false),
-        graph(graph_)
 {
 	AudioProcessorGraphMultiThreaded::AudioGraphIOProcessor* const ioProc
 		= dynamic_cast <AudioProcessorGraphMultiThreaded::AudioGraphIOProcessor*> (processor.get());
