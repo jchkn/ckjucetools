@@ -160,9 +160,11 @@ public:
 		ScopedPointer<AudioSampleBuffer> buffer;
         bool isPrepared;
 
-		MidiBuffer midiFakeBufferNotImplemented;
-
 		AudioProcessorGraphMultiThreaded& graph;
+
+		
+        MidiBuffer midiFakeBufferNotImplemented;
+
       
 
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Node);
