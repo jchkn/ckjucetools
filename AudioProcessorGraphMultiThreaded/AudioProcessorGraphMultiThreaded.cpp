@@ -49,11 +49,11 @@ AudioProcessorGraphMultiThreaded::Connection::Connection (const uint32 sourceNod
 
 //==============================================================================
 AudioProcessorGraphMultiThreaded::Node::Node (const uint32 nodeId_, AudioProcessor* const processor_, AudioProcessorGraphMultiThreaded& graph_) noexcept
-    : nodeId (nodeId_),
-      processor (processor_),
-	  isPrepared (false),
-        graph(graph_),
-	  processingDone(false)
+    :   nodeId (nodeId_),
+        processingDone(false),
+        processor (processor_),
+        isPrepared (false),
+        graph(graph_)
 
 {
 	AudioProcessorGraphMultiThreaded::AudioGraphIOProcessor* const ioProc
