@@ -19,7 +19,7 @@ public:
 	MultiProcessPropertiesFileWrapper(PropertiesFile * propertiesFileNonOwned)
 		: propertiesFile(propertiesFileNonOwned)
 	{
-		
+			updateModificationTime();
 	};
 
 	virtual ~MultiProcessPropertiesFileWrapper()
