@@ -262,11 +262,12 @@ bool AudioProcessorGraphMultiThreaded::Node::isProcessingDone()
 
 //==============================================================================
 AudioProcessorGraphMultiThreaded::AudioProcessorGraphMultiThreaded()
-    : waitEvent(true),
+    :   nodeProcessingActive(false),
+        waitEvent(true),
 		lastNodeId (0),
       renderingBuffers (1, 1),
-      currentAudioOutputBuffer (1, 1),
-	  nodeProcessingActive(false)
+      currentAudioOutputBuffer (1, 1)
+
 {
 	nothingHappenedCounter=0;
 	nextNodeIteritater=0;
